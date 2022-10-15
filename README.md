@@ -1,1 +1,1 @@
-# WebdriverIO-Code-Snippet
+# WebdriverIO Code Snippet
