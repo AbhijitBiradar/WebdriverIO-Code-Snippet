@@ -199,6 +199,182 @@ Commonly used different Locators/Selectors in WebDriverIO are listed as below: �
 8) Chain Selectors
 
 
+# WebDriverIO – CSS Query Selector
+
+```js
+
+const assert = require('assert');
+describe('find Title Using CSS Query Selector', () => {
+it('should be able to find Title using CSS Selector',() => {
+    browser.url('http://omayo.blogspot.com');
+    var title = $('h1.title').getText();
+    console.log(title);
+    browser.pause(3000);
+  });
+});
+
+```
+
+# Link Text Locator in WebDriverIO
+
+```js
+
+const assert = require('assert'); 
+describe('print visible text using link text locator ',() => {
+   it('should print visible text and attributes using link text locator',() => { 
+      browser.url('http://omayo.blogspot.com');       
+      var link = $('=Selenium143');       
+      console.log(link.getText()); // outputs: "Selenium143"     
+      console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"    
+      link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"         
+      browser.pause(3000);  
+ }); 
+});
+
+```
+
+# Partial Link Text Locator in WebDriverIO
+
+```js
+
+const assert = require('assert');
+describe('print visible text using Partial link text locator ',() => {
+  it('should print visible text and attributes and click on link using partial link text locator',() => {
+      browser.url('http://omayo.blogspot.com');
+      var link = $('*=diumdev');
+      console.log(link.getText()); //output :- compendiumdev
+      console.log(link.getAttribute('href')); output :-  //http://compendiumdev.co.uk/selenium/basic_web_page.html
+      link.click(); //open web page :- http://compendiumdev.co.uk/selenium/basic_web_page.html
+      browser.pause(3000);
+  });
+});
+
+```
+
+# Element with Certain Text Locator in WebDriverIO
+
+```js
+
+const assert = require('assert')
+describe('print visible text using Tag Name locator',() => {
+ it('should print visible text using Tag Name locator',() => {
+     browser.url('http://omayo.blogspot.com')
+     console.log($('p=PracticeAutomationHere').getText())
+     browser.pause(3000);
+    }); 
+});
+
+```
+
+# Tag Name Locator in WebDriverIO
+
+```js
+
+const assert = require('assert');
+describe('print visible text using Tag Name locator ',() => {
+  it('should print visible text using Tag Name locator',() => {
+      browser.url('http://omayo.blogspot.com');
+      console.log($('<button>').getText());
+      browser.pause(3000);
+  });
+});
+  
+```
+
+# ID Locators in WebDriverIO  
+
+```js
+
+describe('Navigate to Selenium143 Blogspot using ID Locator/Selector', () => {   
+  it('should be able to find ID of URL Link using ID Locator/Selector',() => {        
+      browser.url('www.omayo.blogspot.com');        
+      $('#selenium143').click();  //using Id Locator and clicking on link Simultaneously   
+      browser.pause(3000);      
+    });     
+});
+  
+```
+
+# WebDriverIO –Using Xpath Locators
+
+```js
+
+describe('Click on ClickToGetAlert Button Using Xpath Locators in WebDriverIO',() => {
+        
+     it('should find Absolute Xpath for ClickToGetAlert Button and Then click on it',() => {
+        browser.url('http://omayo.blogspot.com')
+        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+        browser.pause(3000); 
+        });
+     
+     it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+        browser.url('http://omayo.blogspot.com')
+        $('//*[@id="alert1"]').click()
+        browser.pause(3000); 
+        });   
+    });
+  
+ ```
+ 
+# Switching To Frames in WebDriverIO
+
+```js
+
+describe('Locate Iframe Using SwitchToFrame Command in WebDriverIO',() => {
+
+    it('should Locate Iframe and Enter Text in Text Field Present in Iframe',() => {
+        browser.url('http://omayo.blogspot.com')
+        browser.pause(3000);
+        $('#iframe2').isDisplayed()  
+        const iframe = $("#iframe2") /* const variable named as iframe is created and
+                                         iframe id is assigned to iframe
+                                      */
+        iframe.scrollIntoView(); 
+        browser.switchToFrame(iframe)
+        $('#q').isDisplayed()  
+        $('#q').click()
+        $('#q').keys("Text has been Entered in iframe2 text box")
+        browser.pause(3000);  
+        });
+    });
+  
+```
+
+# WebDriverIO – Switching To Tabs in WebDriverIO
+
+```js
+
+describe('Switching to tabs in WebDriverIO',() => {
+    it('should Switch tabs using switchWindow Command ',() => {        
+       browser.url('https://omayo.blogspot.com')
+       $("//*[@id='selenium143']").click()  //xpath of the hyperlink on webpage 
+       browser.pause(3000);
+       browser.switchWindow('http://selenium143.blogspot.com/')
+    });
+});  
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
