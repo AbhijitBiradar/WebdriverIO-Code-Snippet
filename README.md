@@ -355,6 +355,149 @@ describe('Switching to tabs in WebDriverIO',() => {
 
 ```
 
+# WebDriverIO – Scroll Into View Command in WebDriverIO
+
+```js
+
+describe('ScrollIntoView Command in WebDriverIO',() => {
+    it('should scroll to footer of the webpage',() => {        
+           browser.url('http://omayo.blogspot.com/')
+           const Footer = $('.footer-cap-top');
+           // scroll to specific element
+           Footer.scrollIntoView();
+           browser.pause(3000)
+    });
+});
+
+```
+
+# WebDriverIO – Save Screenshot in WebDriverIO
+
+```js
+
+describe('save screenshot command takes screenshot in WebDriverIO',() => {
+    it('should take screenshot of page view of webpage',() => {        
+           browser.url('http://omayo.blogspot.com/')
+           $('.footer-cap-top').scrollIntoView()
+           browser.pause(3000)
+           browser.saveScreenshot('./test/Screenshot/pageview.png')
+    });
+});
+
+```
+
+# WebDriverIO – Drag and Drop in WebDriverIO
+
+```js
+
+describe('Drag and Drop command moves Drag Box from its position to Destination i.e., Drop Box',()=> {
+      it('should make Drag Box to reach out to Drop Box', () => {
+      browser.url('https://jqueryui.com/droppable/')
+      const frame1 = $('/html/body/div[1]/div[2]/div/div[1]/iframe')
+      browser.switchToFrame(frame1)
+      const drag = $('#draggable')
+      drag.waitForExist(5000)
+      console.log(drag)
+      const drop =$('#droppable')
+      console.log(drop)
+      drag.dragAndDrop(drop, 5000)
+      browser.pause(8000);
+    })
+})
+
+```
+
+# WebDriverIO – Skip Test Cases
+
+```js
+
+describe('Explaining how to skip test cases in WebDriverIO',() => {
+    it.skip('should skip this test case',() => {
+        browser.url ('http://omayo.blogspot.com')
+        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/asid   e/div[1]/div[4]/div[1]/input').click()
+        browser.pause(3000); 
+        });
+
+It ('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+        browser.url('http://omayo.blogspot.com')
+        $('//*[@id="alert1"]').click()
+        browser.pause(3000); 
+        });  
+    });
+
+```
+
+# WebDriverIO – Handling Multiple Windows in WebDriverIO
+
+```js
+
+describe('Handling Multiple Windows switching to child window and then switching to parent window back',()=> {
+        it('should make switching from parent to child and child to parent window', () => {    
+        browser.url('http://omayo.blogspot.com/')
+        var parentWindow = browser.getWindowHandle()
+        $('#HTML37 > div:nth-child(2) > p:nth-child(2) > a:nth-child(1)').click()
+        browser.pause(3000)
+        var ID = browser.getWindowHandles()
+        for(var i = 0; i< ID.length; i++){
+            if( ID[i]!= parentWindow){
+                browser.switchToWindow(ID[i])
+                browser.maximizeWindow()
+                break;
+            }
+        }
+        browser.pause(3000)
+        browser.switchToWindow(parentWindow)
+        browser.pause(3000)
+    })
+})
+
+```
+
+# WebDriverIO – Dot Reporter
+
+WebDriverIO Supports many number of Reporters out of which we will discuss few which are mentioned below :-
+
+1) Dot Reporter (https://www.qafox.com/webdriverio-dot-reporter-in-webdriverio/)
+
+2) Spec Reporter (https://www.qafox.com/webdriverio-spec-reporter/)
+
+3) Junit Reporter (https://www.qafox.com/webdriverio-junit-reporter/)
+
+4) Json Reporter (https://www.qafox.com/webdriverio-json-reporter/)
+
+5) Allure Reporter (https://www.qafox.com/webdriverio-allure-reporter/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
