@@ -468,20 +468,343 @@ WebDriverIO Supports many number of Reporters out of which we will discuss few w
 5) Allure Reporter (https://www.qafox.com/webdriverio-allure-reporter/)
 
 
+# WebDriverIO – Dot Reporter
+
+```js
+
+describe('Demonstrating dot reporter in WebdriverIO',() => {
+     it('should find absolute path for clickToGetAlert Button and then click on it',() => {
+        browser.url ('http://omayo.blogspot.com')
+        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+        browser.pause(3000); 
+        });
+
+    it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+        browser.url('http://omayo.blogspot.com')
+        $('//*[@id="alert1"]').click()
+        browser.pause(3000); 
+        });
+
+    it('should print visible text and attributes using link text locator',() => {
+      browser.url('http://omayo.blogspot.com');
+      var link = $('=Selenium143');
+      console.log(link.getText()); // outputs: "Selenium143"
+      console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
+      link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"  
+      browser.pause(3000);
+  });
+});
+
+```
+
+# WebDriverIO – Spec Reporter
+
+```js
+
+describe('Demonstrating spec reporter in WebdriverIO',() => {
+ it('should find absolute path for clickToGetAlert Button and then click on it',() => {
+        browser.url ('http://omayo.blogspot.com')
+        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+        browser.pause(3000); 
+        })
+
+ it('should print visible text and attributes using link text locator',() => {
+       browser.url('http://omayo.blogspot.com');
+       var link = $('=Selenium143');
+       console.log(link.getText()); // outputs: "Selenium143"
+       console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
+       link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"  
+       browser.pause(3000);
+
+  })
+
+ it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+       browser.url('http://omayo.blogspot.com')
+       $('#selenium143').click()
+       browser.pause(3000); 
+   })
+ })
+
+```
+
+# WebDriverIO – Junit Reporter
+
+```js
+
+describe('Demonstrating Junit reporter in WebdriverIO',() => {
+
+it('should find absolute path for clickToGetAlert Button and then click on it',() => {
+
+browser.url ('http://omayo.blogspot.com')
+
+$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+
+browser.pause(3000);
+
+})
 
 
+it('should print visible text and attributes using link text locator',() => {
 
+browser.url('http://omayo.blogspot.com');
 
+var link = $('=Selenium143');
 
+console.log(link.getText()); // outputs: "Selenium143"
 
+console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"
 
+link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"
 
+browser.pause(3000);
 
+})
 
+it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
 
+browser.url('http://omayo.blogspot.com')
 
+$('#selenium143').click()
 
+browser.pause(3000);
 
+});
+
+})
+
+```
+
+# WebDriverIO – Json Reporter
+
+```js
+
+describe('Demonstrating JSON reporter in WebdriverIO',() => {
+
+it('should find absolute path for clickToGetAlert Button and then click on it',() => {
+
+        browser.url ('http://omayo.blogspot.com')
+
+        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+
+        browser.pause(3000); 
+
+        })
+
+it('should print visible text and attributes using link text locator',() => {
+
+        browser.url('http://omayo.blogspot.com');
+
+        var link = $('=Selenium143');
+
+        console.log(link.getText()); // outputs: "Selenium143"
+
+        console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
+
+        link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"  
+
+        browser.pause(3000);
+
+        })
+
+it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+
+        browser.url('http://omayo.blogspot.com')
+
+        $('#selenium143').click()
+
+        browser.pause(3000); 
+
+        });
+
+});
+
+```
+
+# WebDriverIO – Allure Reporter
+
+```js
+
+describe('Demonstrating JSON reporter in WebdriverIO',() => {
+
+it('should find absolute path for clickToGetAlert Button and then click on it',() => {
+
+        browser.url ('http://omayo.blogspot.com')
+
+        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+
+        browser.pause(3000); 
+
+        })
+
+it('should print visible text and attributes using link text locator',() => {
+
+        browser.url('http://omayo.blogspot.com');
+
+        var link = $('=Selenium143');
+
+        console.log(link.getText()); // outputs: "Selenium143"
+
+        console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
+
+        link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"  
+
+        browser.pause(3000);
+
+        })
+
+it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+
+        browser.url('http://omayo.blogspot.com')
+
+        $('#selenium143').click()
+
+        browser.pause(3000); 
+
+        });
+
+});
+
+```
+
+# WebDriverIO – Timeline Reporter
+
+```js
+
+describe('Demonstrating Timeline reporter in WebdriverIO',() => {
+    it('should find absolute path for clickToGetAlert Button and then click on it',() => {
+            browser.url ('http://omayo.blogspot.com')
+            $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+            browser.pause(3000); 
+            })
+    it('should print visible text and attributes using link text locator',() => {
+            browser.url('http://omayo.blogspot.com');
+            var link = $('=Selenium143');
+            console.log(link.getText()); // outputs: "Selenium143"
+            console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
+            link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"  
+            browser.pause(3000);
+            })
+    it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+            browser.url('http://omayo.blogspot.com')
+            $('#selenium143').click()
+            browser.pause(3000); 
+            });
+    });
+
+```
+
+# WebDriverIO – $ Command
+
+```js
+
+describe('This Example show usage of $$ command in webdriverio', () => {
+
+    it('should fetch multiple element based on the locator passed and perform actions accordingly   ', ()=> {
+
+    browser.url('http://omayo.blogspot.com');
+
+    const text = $('//*[@id="HTML25"]/div[1]/ol/li');
+
+    console.log(text[2].getText());
+
+    });
+    
+ ```
+   
+# WebDriverIO – $$ Command
+
+```js
+
+describe('This Example show usage of $$ command in webdriverio', () => {
+
+    it('should fetch multiple element based on the locator passed and perform actions accordingly', ()=> {
+
+    browser.url('http://omayo.blogspot.com');
+
+    const text = $$('//*[@id="HTML25"]/div[1]/ol/li');
+
+    console.log(text[2].getText());
+
+    });
+
+});
+
+```
+
+# WebDriverIO – getSize Command
+
+```js
+
+describe('This Example show usage of $ command in webdriverio', () => {
+    it('should fetch element based on the locator passed and perform actions accordingly', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    const size = $('#HTML29 > div.widget-content > img').getSize();
+    console.log(size); // display result in width and height , output should be { width: 150, height: 200 }
+    console.log(size.width) //display only width of Image , output should be 150
+    console.log(size.height) //display only height of Image output should be 200
+    });
+});
+
+```
+
+# WebDriverIO – getWindowSize
+
+```js
+
+describe('This Example show usage of getWindowSize command in webdriverio', () => {
+    it('should fetch the size of browserWindow in which mentioned url has been opened', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    console.log(browser.getWindowSize());
+    });
+});
+
+```
+
+# WebDriverIO – setWindowSize
+
+```js
+
+describe('This Example show usage of setWindowSize command in webdriverio', () => {
+    it('should fetch the size of browser Window in which mentioned url has been opened', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    console.log(browser.setWindowSize(400,800));
+    browser.pause(3000);
+    });
+});
+
+```
+
+# WebDriverIO – Pause Command
+
+```js
+
+describe('This Example show usage of pause command in webdriverio', () => {
+    it('should click on button and pause browser for 25 seconds before exiting', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    const UL = $('#HTML25 > h2'); 
+    UL.scrollIntoView(); // scroll till UnOrderedlist so that Button to click comes under browser view 
+    $('#alert2').click();// clicking on button
+    browser.acceptAlert() //Accepts the alert which gets open
+    browser.pause(25000); //make browser to pause for 25 seconds till text got disappeared.
+    });
+});
+
+```
+
+# WebDriverIO – Keys Command
+
+```js
+
+describe('This Example show usage of Keys command in webdriverio', () => {
+    it('should use Enter Key of Keyboard rather than clicking on search button', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    $('td.gsc-input > input').setValue('Random'); //Writing in Search Bar 
+    browser.keys('Enter')//Hitting Enter Key from Keyboard for Searching Random Word on web Application
+    browser.pause(3000);
+    });
+});
+
+```
 
 
 
