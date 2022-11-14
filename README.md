@@ -806,36 +806,156 @@ describe('This Example show usage of Keys command in webdriverio', () => {
 
 ```
 
+# WebDriverIO – Handling Alerts
 
+```js
 
+describe('This Example show usage of acceptAlert() command in webdriverio', () => {
+    it('should accept Alert Box', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    $('#alert1').click(); //Click on Alert Button 
+    browser.acceptAlert(); //Accept the Alert/Dialogue Box
+    browser.pause(3000);
+    });
+});
 
+```
 
+# WebDriverIO – Dismiss Alerts
 
+```js
 
+describe('This Example show usage of dismissAlert() command in webdriverio', () => {
+    it('should dismiss confirmation Alert Box', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    $('#confirm').click(); //Click on confirmation Alert Button 
+    browser.dismissAlert(); //dimiss the Alert/Dialogue Box
+    browser.pause(3000);
+    });
+});
 
+```
 
+# WebDriverIO – Get Alert Text
 
+```js
 
+describe('This Example show usage of getAlertText() command in webdriverio', () => {
+    it('should display Text of Alert Box', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    $('#alert1').click(); //Click on ClickToGetAlert Button 
+    let AlertText = browser.getAlertText(); //Storing the text present on Alert/Dialogue Box
+    console.log(AlertText);
+    browser.pause(3000);
+    });
+});
 
+```
 
+# WebDriverIO – sendAlertText
 
+```js
 
+describe('This Example show usage of sendAlertText() command in webdriverio', () => {
+    it('should send Text to user prompt Box', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    $('#prompt').click(); //Click on Get Prompt Button 
+    browser.sendAlertText("How is your WebDriveIO journey is going on ? ");
+    browser.pause(3000);
+  });
+});
 
+```
 
+# WebDriverIO – Double click
 
+```js
 
+describe('This Example show usage of doubleCLick() command in webdriverio', () => {
+    it('should click on Double Click Here Button on Omayo.blogspot.com Web Application', ()=> {
+    browser.url('http://omayo.blogspot.com');
+    $("#myBtn").scrollIntoView();
+    const myButton = $("//button[contains(text(),'Double click Here')]");
+    myButton.doubleClick() //Double Click on Double Click Here Button 
+    browser.pause(3000);
+    });
+});
 
+```
 
+# WebDriverIO – MoveTo
 
+```js
 
+describe('This Example show usage of MoveTo() command in webdriverio', () => {
+    it(' should demonstrate mouse hover over blog menu list on omayo.blogspot.com web application’ , () => {
+        browser.url('http://omayo.blogspot.com/')
+        $("li.has-sub > a").moveTo(30,60) //hovering over blogs menu list
+        browser.pause(3000);
+    });
+});
 
+```
 
+# WebDriverIO – isExisting
 
+```js
 
+describe('This Example show usage of isExisting() command in webdriverio',() => { 
+  it('should give us true if element is present on the page else returns false',()=> { 
+  browser.url('http://omayo.blogspot.com');  
+  var elementPresent = $('#hbutton').isExisting(); 
+  console.log(elementPresent); 
+ });
+});
 
+```
 
+# WebDriverIO – isClickable
 
+```js
 
+describe('This Example show usage of isClickable() command in webdriverio', () => {
+  it('should give us false if isClickable() has been applied on disable element', ()=> {
+  browser.url('http://omayo.blogspot.com');
+  var disabledElement = $('//button[@id="but1"]').isClickable();
+  console.log(disabledElement);
+ });
+});
+
+```
+
+# WebDriverIO – isSelected
+
+```js
+
+beforeEach(function(){
+browser.url('http://omayo.blogspot.com');
+ });
+
+describe('This Example show usage of isSelected() command in webdriverio', () => {
+ it('should give us true if isSelected() has been applied on selected Radio button element',()=> {
+ var isSelected = $("input[value='Bicycle']").isSelected(); //RadioButton is in Selected State
+ console.log(isSelected);
+ });
+
+it('should give us false if isSelected() has been applied on not selected Radio button element', ()=> {
+ var isSelected = $("input[value='Bike']").isSelected();//RadioButton is not in Selected State
+ console.log(isSelected);
+ });
+
+it('should give us false if isSelected() has been applied on not selected Radio button element', ()=> {
+ var isSelected = $("input[value='Laptop']").isSelected();//CheckBox is not in Selected State
+ console.log(isSelected);
+ });
+
+it('should give us true if isSelected() has been applied on selected Radio button element', ()=> {
+ var isSelected = $("input[value='Book']").isSelected();//CheckBox is in Selected State
+ console.log(isSelected);
+ });
+});
+
+```
 
 
 
