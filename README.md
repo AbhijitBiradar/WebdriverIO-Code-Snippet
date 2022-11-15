@@ -1,25 +1,6 @@
 # WebdriverIO Code Snippet
 
-# Sample WebdriverIO Script
-
-1. **Run your first automation script**
-
-```js
-
-const { remote } = require('webdriverio'); (async () => { 
-const browser = await remote({ logLevel: 'error', path: '/', 
-capabilities: {browserName: 'firefox'} });
-await browser.url('http://tutorialsninja.com/demo/'); 
-const title = await browser.getTitle(); 
-console.log('Title was:' + title); 
-await browser.deleteSession(); 
-}) ().catch((e) => console.error(e));
-
-```
-
 # Sample WebdriverIO Login Test
-
-1. **Run Authentication Login Test**
 
 ```js
 
@@ -54,13 +35,14 @@ describe('Tutorials Ninja Login Form', () => {
 ```js
 
 const assert = require('assert');
-	describe('waitForCommands', () => {
-	 it('waitForDisplayed', ()=> {
+
+describe('waitForCommands', () => {
+	it('waitForDisplayed', ()=> {
 		 browser.url('https://the-internet.herokuapp.com/dynamic_loading/1');
 		 $('#start button').click();
 		 $('#finish').waitForDisplayed();  //will wait for text present under ID finish to display.
 		 assert.equal( ($('#finish h4').getText()),'Hello World! ');
-	 });
+	});
 });
 
 ```
@@ -123,14 +105,15 @@ describe(‘waitCommands’, () => {
 ```js
 
 const assert = require('assert');
- describe('Handle Checkboxes', () => {
- it('should be checked', ()=> { 
- browser.url('http://omayo.blogspot.com'); 
- const checkbox_two = $('[type="checkbox"]:nth-child(2)'); 
- checkbox_two.scrollIntoView(); browser.pause(3000); 
- checkbox_two.click(); 
- browser.pause(3000); 
- }); 
+
+describe('Handle Checkboxes', () => {
+	it('should be checked', ()=> { 
+		browser.url('http://omayo.blogspot.com'); 
+		const checkbox_two = $('[type="checkbox"]:nth-child(2)'); 
+		checkbox_two.scrollIntoView(); browser.pause(3000); 
+		checkbox_two.click(); 
+		browser.pause(3000); 
+	}); 
 });
 
 ```
@@ -142,9 +125,9 @@ const assert = require('assert');
 const assert = require('assert');
 describe('Handle Dropdowns', () => {
     it('should select value from dropdown menu', ()=> {
-      browser.url('http://omayo.blogspot.com');
-      $('#drop1').selectByVisibleText('doc 3');
-      browser.pause(3000);
+	      browser.url('http://omayo.blogspot.com');
+	      $('#drop1').selectByVisibleText('doc 3');
+	      browser.pause(3000);
     });  
 });
 
@@ -157,12 +140,12 @@ describe('Handle Dropdowns', () => {
 
 const assert = require('assert');
 describe ('Handle Radio Button', ()=> {
-it('should handle radio button on webpage', ()=> {
-    browser.url('http://omayo.blogspot.com/');
-    const  radio_button = $('input[id="radio2"]');  //storing Xpath for the required Radio Button
-                radio_button.click(); // clicking on radio button
-                browser.pause(3000);
-   });
+	it('should handle radio button on webpage', ()=> {
+		browser.url('http://omayo.blogspot.com/');
+		const  radio_button = $('input[id="radio2"]');  //storing Xpath for the required Radio Button
+		radio_button.click(); // clicking on radio button
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -171,14 +154,15 @@ it('should handle radio button on webpage', ()=> {
 
 ```js
 
-const assert = require('assert'); describe('Handle TextBox', () => { 
-it('should handle text area/text box on webpages', ()=> {
-    browser.url('http://omayo.blogspot.com/'); 
-    $('#ta1').addValue('Test') //Writing Test to Text Area on WebPage
-    $('#ta1').addValue('_Data') //Appending _Data to already written text in Text Area
-    $('#textbox1').setValue('Test WebDriver')//Writing Test WebDriver to text box with predefined text 
-    browser.pause(5000);
-   }); 
+const assert = require('assert'); 
+describe('Handle TextBox', () => { 
+	it('should handle text area/text box on webpages', ()=> {
+		    browser.url('http://omayo.blogspot.com/'); 
+		    $('#ta1').addValue('Test') //Writing Test to Text Area on WebPage
+		    $('#ta1').addValue('_Data') //Appending _Data to already written text in Text Area
+		    $('#textbox1').setValue('Test WebDriver')//Writing Test WebDriver to text box with predefined text 
+		    browser.pause(5000);
+	   }); 
 });
 
 ```
@@ -210,12 +194,12 @@ Commonly used different Locators/Selectors in WebDriverIO are listed as below: �
 
 const assert = require('assert');
 describe('find Title Using CSS Query Selector', () => {
-it('should be able to find Title using CSS Selector',() => {
-    browser.url('http://omayo.blogspot.com');
-    var title = $('h1.title').getText();
-    console.log(title);
-    browser.pause(3000);
-  });
+	it('should be able to find Title using CSS Selector',() => {
+		browser.url('http://omayo.blogspot.com');
+		var title = $('h1.title').getText();
+		console.log(title);
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -226,14 +210,14 @@ it('should be able to find Title using CSS Selector',() => {
 
 const assert = require('assert'); 
 describe('print visible text using link text locator ',() => {
-   it('should print visible text and attributes using link text locator',() => { 
-      browser.url('http://omayo.blogspot.com');       
-      var link = $('=Selenium143');       
-      console.log(link.getText()); // outputs: "Selenium143"     
-      console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"    
-      link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"         
-      browser.pause(3000);  
- }); 
+	it('should print visible text and attributes using link text locator',() => { 
+		browser.url('http://omayo.blogspot.com');       
+		var link = $('=Selenium143');       
+		console.log(link.getText()); // outputs: "Selenium143"     
+		console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"    
+		link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"         
+		browser.pause(3000);  
+	}); 
 });
 
 ```
@@ -244,14 +228,14 @@ describe('print visible text using link text locator ',() => {
 
 const assert = require('assert');
 describe('print visible text using Partial link text locator ',() => {
-  it('should print visible text and attributes and click on link using partial link text locator',() => {
-      browser.url('http://omayo.blogspot.com');
-      var link = $('*=diumdev');
-      console.log(link.getText()); //output :- compendiumdev
-      console.log(link.getAttribute('href')); output :-  //http://compendiumdev.co.uk/selenium/basic_web_page.html
-      link.click(); //open web page :- http://compendiumdev.co.uk/selenium/basic_web_page.html
-      browser.pause(3000);
-  });
+	it('should print visible text and attributes and click on link using partial link text locator',() => {
+		browser.url('http://omayo.blogspot.com');
+		var link = $('*=diumdev');
+		console.log(link.getText()); //output :- compendiumdev
+		console.log(link.getAttribute('href')); output :-  //http://compendiumdev.co.uk/selenium/basic_web_page.html
+		link.click(); //open web page :- http://compendiumdev.co.uk/selenium/basic_web_page.html
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -262,11 +246,11 @@ describe('print visible text using Partial link text locator ',() => {
 
 const assert = require('assert')
 describe('print visible text using Tag Name locator',() => {
- it('should print visible text using Tag Name locator',() => {
-     browser.url('http://omayo.blogspot.com')
-     console.log($('p=PracticeAutomationHere').getText())
-     browser.pause(3000);
-    }); 
+	it('should print visible text using Tag Name locator',() => {
+		browser.url('http://omayo.blogspot.com')
+		console.log($('p=PracticeAutomationHere').getText())
+		browser.pause(3000);
+	}); 
 });
 
 ```
@@ -277,11 +261,11 @@ describe('print visible text using Tag Name locator',() => {
 
 const assert = require('assert');
 describe('print visible text using Tag Name locator ',() => {
-  it('should print visible text using Tag Name locator',() => {
-      browser.url('http://omayo.blogspot.com');
-      console.log($('<button>').getText());
-      browser.pause(3000);
-  });
+	it('should print visible text using Tag Name locator',() => {
+		browser.url('http://omayo.blogspot.com');
+		console.log($('<button>').getText());
+		browser.pause(3000);
+	});
 });
   
 ```
@@ -291,11 +275,11 @@ describe('print visible text using Tag Name locator ',() => {
 ```js
 
 describe('Navigate to Selenium143 Blogspot using ID Locator/Selector', () => {   
-  it('should be able to find ID of URL Link using ID Locator/Selector',() => {        
-      browser.url('www.omayo.blogspot.com');        
-      $('#selenium143').click();  //using Id Locator and clicking on link Simultaneously   
-      browser.pause(3000);      
-    });     
+	it('should be able to find ID of URL Link using ID Locator/Selector',() => {        
+		browser.url('www.omayo.blogspot.com');        
+		$('#selenium143').click();  //using Id Locator and clicking on link Simultaneously   
+		browser.pause(3000);      
+	});     
 });
   
 ```
@@ -304,20 +288,19 @@ describe('Navigate to Selenium143 Blogspot using ID Locator/Selector', () => {
 
 ```js
 
-describe('Click on ClickToGetAlert Button Using Xpath Locators in WebDriverIO',() => {
-        
-     it('should find Absolute Xpath for ClickToGetAlert Button and Then click on it',() => {
-        browser.url('http://omayo.blogspot.com')
-        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
-        browser.pause(3000); 
-        });
-     
-     it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
-        browser.url('http://omayo.blogspot.com')
-        $('//*[@id="alert1"]').click()
-        browser.pause(3000); 
-        });   
-    });
+describe('Click on ClickToGetAlert Button Using Xpath Locators in WebDriverIO',() => {        
+	it('should find Absolute Xpath for ClickToGetAlert Button and Then click on it',() => {
+		browser.url('http://omayo.blogspot.com')
+		$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
+		browser.pause(3000); 
+	});
+
+	it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+		browser.url('http://omayo.blogspot.com')
+		$('//*[@id="alert1"]').click()
+		browser.pause(3000); 
+	});   
+});
   
  ```
  
@@ -326,22 +309,19 @@ describe('Click on ClickToGetAlert Button Using Xpath Locators in WebDriverIO',(
 ```js
 
 describe('Locate Iframe Using SwitchToFrame Command in WebDriverIO',() => {
-
-    it('should Locate Iframe and Enter Text in Text Field Present in Iframe',() => {
-        browser.url('http://omayo.blogspot.com')
-        browser.pause(3000);
-        $('#iframe2').isDisplayed()  
-        const iframe = $("#iframe2") /* const variable named as iframe is created and
-                                         iframe id is assigned to iframe
-                                      */
-        iframe.scrollIntoView(); 
-        browser.switchToFrame(iframe)
-        $('#q').isDisplayed()  
-        $('#q').click()
-        $('#q').keys("Text has been Entered in iframe2 text box")
-        browser.pause(3000);  
-        });
-    });
+	it('should Locate Iframe and Enter Text in Text Field Present in Iframe',() => {
+		browser.url('http://omayo.blogspot.com')
+		browser.pause(3000);
+		$('#iframe2').isDisplayed()  
+		const iframe = $("#iframe2") /* const variable named as iframe is created and iframe id is assigned to iframe */
+		iframe.scrollIntoView(); 
+		browser.switchToFrame(iframe)
+		$('#q').isDisplayed()  
+		$('#q').click()
+		$('#q').keys("Text has been Entered in iframe2 text box")
+		browser.pause(3000);  
+	});
+});
   
 ```
 
@@ -350,12 +330,12 @@ describe('Locate Iframe Using SwitchToFrame Command in WebDriverIO',() => {
 ```js
 
 describe('Switching to tabs in WebDriverIO',() => {
-    it('should Switch tabs using switchWindow Command ',() => {        
-       browser.url('https://omayo.blogspot.com')
-       $("//*[@id='selenium143']").click()  //xpath of the hyperlink on webpage 
-       browser.pause(3000);
-       browser.switchWindow('http://selenium143.blogspot.com/')
-    });
+	it('should Switch tabs using switchWindow Command ',() => {        
+		browser.url('https://omayo.blogspot.com')
+		$("//*[@id='selenium143']").click()  //xpath of the hyperlink on webpage 
+		browser.pause(3000);
+		browser.switchWindow('http://selenium143.blogspot.com/')
+	});
 });  
 
 ```
@@ -365,13 +345,13 @@ describe('Switching to tabs in WebDriverIO',() => {
 ```js
 
 describe('ScrollIntoView Command in WebDriverIO',() => {
-    it('should scroll to footer of the webpage',() => {        
-           browser.url('http://omayo.blogspot.com/')
-           const Footer = $('.footer-cap-top');
-           // scroll to specific element
-           Footer.scrollIntoView();
-           browser.pause(3000)
-    });
+	it('should scroll to footer of the webpage',() => {        
+		browser.url('http://omayo.blogspot.com/')
+		const Footer = $('.footer-cap-top');
+		// scroll to specific element
+		Footer.scrollIntoView();
+		browser.pause(3000)
+	});
 });
 
 ```
@@ -381,12 +361,12 @@ describe('ScrollIntoView Command in WebDriverIO',() => {
 ```js
 
 describe('save screenshot command takes screenshot in WebDriverIO',() => {
-    it('should take screenshot of page view of webpage',() => {        
-           browser.url('http://omayo.blogspot.com/')
-           $('.footer-cap-top').scrollIntoView()
-           browser.pause(3000)
-           browser.saveScreenshot('./test/Screenshot/pageview.png')
-    });
+	it('should take screenshot of page view of webpage',() => {        
+		browser.url('http://omayo.blogspot.com/')
+		$('.footer-cap-top').scrollIntoView()
+		browser.pause(3000)
+		browser.saveScreenshot('./test/Screenshot/pageview.png')
+	});
 });
 
 ```
@@ -396,18 +376,18 @@ describe('save screenshot command takes screenshot in WebDriverIO',() => {
 ```js
 
 describe('Drag and Drop command moves Drag Box from its position to Destination i.e., Drop Box',()=> {
-      it('should make Drag Box to reach out to Drop Box', () => {
-      browser.url('https://jqueryui.com/droppable/')
-      const frame1 = $('/html/body/div[1]/div[2]/div/div[1]/iframe')
-      browser.switchToFrame(frame1)
-      const drag = $('#draggable')
-      drag.waitForExist(5000)
-      console.log(drag)
-      const drop =$('#droppable')
-      console.log(drop)
-      drag.dragAndDrop(drop, 5000)
-      browser.pause(8000);
-    })
+	it('should make Drag Box to reach out to Drop Box', () => {
+		browser.url('https://jqueryui.com/droppable/')
+		const frame1 = $('/html/body/div[1]/div[2]/div/div[1]/iframe')
+		browser.switchToFrame(frame1)
+		const drag = $('#draggable')
+		drag.waitForExist(5000)
+		console.log(drag)
+		const drop =$('#droppable')
+		console.log(drop)
+		drag.dragAndDrop(drop, 5000)
+		browser.pause(8000);
+	})
 })
 
 ```
@@ -417,18 +397,18 @@ describe('Drag and Drop command moves Drag Box from its position to Destination 
 ```js
 
 describe('Explaining how to skip test cases in WebDriverIO',() => {
-    it.skip('should skip this test case',() => {
-        browser.url ('http://omayo.blogspot.com')
-        $('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/asid   e/div[1]/div[4]/div[1]/input').click()
-        browser.pause(3000); 
-        });
+	it.skip('should skip this test case',() => {
+		browser.url ('http://omayo.blogspot.com')
+		$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/asid   e/div[1]/div[4]/div[1]/input').click()
+		browser.pause(3000); 
+	});
 
-It ('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
-        browser.url('http://omayo.blogspot.com')
-        $('//*[@id="alert1"]').click()
-        browser.pause(3000); 
-        });  
-    });
+	It ('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
+		browser.url('http://omayo.blogspot.com')
+		$('//*[@id="alert1"]').click()
+		browser.pause(3000); 
+	});  
+});
 
 ```
 
@@ -438,22 +418,22 @@ It ('should find Relative Xpath for ClickToGetAlert Button and Then click on it'
 
 describe('Handling Multiple Windows switching to child window and then switching to parent window back',()=> {
         it('should make switching from parent to child and child to parent window', () => {    
-        browser.url('http://omayo.blogspot.com/')
-        var parentWindow = browser.getWindowHandle()
-        $('#HTML37 > div:nth-child(2) > p:nth-child(2) > a:nth-child(1)').click()
-        browser.pause(3000)
-        var ID = browser.getWindowHandles()
-        for(var i = 0; i< ID.length; i++){
-            if( ID[i]!= parentWindow){
-                browser.switchToWindow(ID[i])
-                browser.maximizeWindow()
-                break;
-            }
-        }
-        browser.pause(3000)
-        browser.switchToWindow(parentWindow)
-        browser.pause(3000)
-    })
+		browser.url('http://omayo.blogspot.com/')
+		var parentWindow = browser.getWindowHandle()
+		$('#HTML37 > div:nth-child(2) > p:nth-child(2) > a:nth-child(1)').click()
+		browser.pause(3000)
+		var ID = browser.getWindowHandles()
+		for(var i = 0; i< ID.length; i++){
+		    if( ID[i]!= parentWindow){
+			browser.switchToWindow(ID[i])
+			browser.maximizeWindow()
+			break;
+		    }
+		}
+		browser.pause(3000)
+		browser.switchToWindow(parentWindow)
+		browser.pause(3000)
+    	})
 })
 
 ```
