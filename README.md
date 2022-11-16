@@ -387,8 +387,8 @@ describe('Drag and Drop command moves Drag Box from its position to Destination 
 		console.log(drop)
 		drag.dragAndDrop(drop, 5000)
 		browser.pause(8000);
-	})
-})
+	});
+});
 
 ```
 
@@ -433,8 +433,8 @@ describe('Handling Multiple Windows switching to child window and then switching
 		browser.pause(3000)
 		browser.switchToWindow(parentWindow)
 		browser.pause(3000)
-    	})
-})
+    	});
+});
 
 ```
 
@@ -491,7 +491,7 @@ describe('Demonstrating spec reporter in WebdriverIO',() => {
 		browser.url ('http://omayo.blogspot.com')
 		$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
 		browser.pause(3000); 
-	})
+	});
 
 	it('should print visible text and attributes using link text locator',() => {
 		browser.url('http://omayo.blogspot.com');
@@ -500,14 +500,14 @@ describe('Demonstrating spec reporter in WebdriverIO',() => {
 		console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
 		link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"  
 		browser.pause(3000);
-	})
+	});
 
 	it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
 		browser.url('http://omayo.blogspot.com')
 		$('#selenium143').click()
 		browser.pause(3000); 
-	})
-})
+	});
+});
 
 ```
 
@@ -520,7 +520,7 @@ describe('Demonstrating Junit reporter in WebdriverIO',() => {
 		browser.url ('http://omayo.blogspot.com')
 		$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
 		browser.pause(3000);
-	})
+	});
 
 	it('should print visible text and attributes using link text locator',() => {
 		browser.url('http://omayo.blogspot.com');
@@ -529,14 +529,14 @@ describe('Demonstrating Junit reporter in WebdriverIO',() => {
 		console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"
 		link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"
 		browser.pause(3000);
-	})
+	});
 
 	it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
 		browser.url('http://omayo.blogspot.com')
 		$('#selenium143').click()
 		browser.pause(3000);
 	});
-})
+});
 
 ```
 
@@ -549,7 +549,7 @@ describe('Demonstrating JSON reporter in WebdriverIO',() => {
 		browser.url ('http://omayo.blogspot.com')
 		$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
 		browser.pause(3000); 
-	})
+	});
 
 	it('should print visible text and attributes using link text locator',() => {
 		browser.url('http://omayo.blogspot.com');
@@ -558,7 +558,7 @@ describe('Demonstrating JSON reporter in WebdriverIO',() => {
 		console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
 		link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"
 		browser.pause(3000);
-	})
+	});
 
 	it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
 		browser.url('http://omayo.blogspot.com')
@@ -579,7 +579,7 @@ describe('Demonstrating JSON reporter in WebdriverIO',() => {
 		browser.url ('http://omayo.blogspot.com')
 		$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
 		browser.pause(3000); 
-	})
+	});
 
 	it('should print visible text and attributes using link text locator',() => {
 		browser.url('http://omayo.blogspot.com');
@@ -588,7 +588,7 @@ describe('Demonstrating JSON reporter in WebdriverIO',() => {
 		console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
 		link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com" 
 		browser.pause(3000);
-	})
+	});
 
 	it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
 		browser.url('http://omayo.blogspot.com')
@@ -608,7 +608,8 @@ describe('Demonstrating Timeline reporter in WebdriverIO',() => {
 		browser.url ('http://omayo.blogspot.com')
 		$('/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[3]/div/aside/div[1]/div[4]/div[1]/input').click()
 		browser.pause(3000); 
-	})
+	});
+	
 	it('should print visible text and attributes using link text locator',() => {
 		browser.url('http://omayo.blogspot.com');
 		var link = $('=Selenium143');
@@ -616,7 +617,8 @@ describe('Demonstrating Timeline reporter in WebdriverIO',() => {
 		console.log(link.getAttribute('href')); //outputs : "http://www.Selenium143.blogspot.com"  
 		link.click(); //Outputs : Redirection to "http://www.Selenium143.blogspot.com"  
 		browser.pause(3000);
-	})
+	});
+	
 	it('should find Relative Xpath for ClickToGetAlert Button and Then click on it',() => {
 		browser.url('http://omayo.blogspot.com')
 		$('#selenium143').click()
