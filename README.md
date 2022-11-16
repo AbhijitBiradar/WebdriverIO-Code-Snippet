@@ -284,7 +284,7 @@ describe('Navigate to Selenium143 Blogspot using ID Locator/Selector', () => {
   
 ```
 
-# WebDriverIO –Using Xpath Locators
+# WebDriverIO – Using Xpath Locators
 
 ```js
 
@@ -631,16 +631,12 @@ describe('Demonstrating Timeline reporter in WebdriverIO',() => {
 ```js
 
 describe('This Example show usage of $$ command in webdriverio', () => {
-
-    it('should fetch multiple element based on the locator passed and perform actions accordingly   ', ()=> {
-
-    browser.url('http://omayo.blogspot.com');
-
-    const text = $('//*[@id="HTML25"]/div[1]/ol/li');
-
-    console.log(text[2].getText());
-
-    });
+	it('should fetch multiple element based on the locator passed and perform actions accordingly   ', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		const text = $('//*[@id="HTML25"]/div[1]/ol/li');
+		console.log(text[2].getText());
+	});
+});
     
  ```
    
@@ -649,17 +645,11 @@ describe('This Example show usage of $$ command in webdriverio', () => {
 ```js
 
 describe('This Example show usage of $$ command in webdriverio', () => {
-
-    it('should fetch multiple element based on the locator passed and perform actions accordingly', ()=> {
-
-    browser.url('http://omayo.blogspot.com');
-
-    const text = $$('//*[@id="HTML25"]/div[1]/ol/li');
-
-    console.log(text[2].getText());
-
-    });
-
+	it('should fetch multiple element based on the locator passed and perform actions accordingly', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		const text = $$('//*[@id="HTML25"]/div[1]/ol/li');
+		console.log(text[2].getText());
+	});
 });
 
 ```
@@ -669,13 +659,13 @@ describe('This Example show usage of $$ command in webdriverio', () => {
 ```js
 
 describe('This Example show usage of $ command in webdriverio', () => {
-    it('should fetch element based on the locator passed and perform actions accordingly', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    const size = $('#HTML29 > div.widget-content > img').getSize();
-    console.log(size); // display result in width and height , output should be { width: 150, height: 200 }
-    console.log(size.width) //display only width of Image , output should be 150
-    console.log(size.height) //display only height of Image output should be 200
-    });
+	it('should fetch element based on the locator passed and perform actions accordingly', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		const size = $('#HTML29 > div.widget-content > img').getSize();
+		console.log(size); // display result in width and height , output should be { width: 150, height: 200 }
+		console.log(size.width) //display only width of Image , output should be 150
+		console.log(size.height) //display only height of Image output should be 200
+	});
 });
 
 ```
@@ -685,10 +675,10 @@ describe('This Example show usage of $ command in webdriverio', () => {
 ```js
 
 describe('This Example show usage of getWindowSize command in webdriverio', () => {
-    it('should fetch the size of browserWindow in which mentioned url has been opened', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    console.log(browser.getWindowSize());
-    });
+	it('should fetch the size of browserWindow in which mentioned url has been opened', ()=> {
+		browser.url('http://omayo.blogspot.com');
+	console.log(browser.getWindowSize());
+	});
 });
 
 ```
@@ -698,11 +688,11 @@ describe('This Example show usage of getWindowSize command in webdriverio', () =
 ```js
 
 describe('This Example show usage of setWindowSize command in webdriverio', () => {
-    it('should fetch the size of browser Window in which mentioned url has been opened', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    console.log(browser.setWindowSize(400,800));
-    browser.pause(3000);
-    });
+	it('should fetch the size of browser Window in which mentioned url has been opened', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		console.log(browser.setWindowSize(400,800));
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -712,14 +702,14 @@ describe('This Example show usage of setWindowSize command in webdriverio', () =
 ```js
 
 describe('This Example show usage of pause command in webdriverio', () => {
-    it('should click on button and pause browser for 25 seconds before exiting', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    const UL = $('#HTML25 > h2'); 
-    UL.scrollIntoView(); // scroll till UnOrderedlist so that Button to click comes under browser view 
-    $('#alert2').click();// clicking on button
-    browser.acceptAlert() //Accepts the alert which gets open
-    browser.pause(25000); //make browser to pause for 25 seconds till text got disappeared.
-    });
+	it('should click on button and pause browser for 25 seconds before exiting', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		const UL = $('#HTML25 > h2'); 
+		UL.scrollIntoView(); // scroll till UnOrderedlist so that Button to click comes under browser view 
+		$('#alert2').click();// clicking on button
+		browser.acceptAlert() //Accepts the alert which gets open
+		browser.pause(25000); //make browser to pause for 25 seconds till text got disappeared.
+	});
 });
 
 ```
@@ -729,12 +719,12 @@ describe('This Example show usage of pause command in webdriverio', () => {
 ```js
 
 describe('This Example show usage of Keys command in webdriverio', () => {
-    it('should use Enter Key of Keyboard rather than clicking on search button', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    $('td.gsc-input > input').setValue('Random'); //Writing in Search Bar 
-    browser.keys('Enter')//Hitting Enter Key from Keyboard for Searching Random Word on web Application
-    browser.pause(3000);
-    });
+	it('should use Enter Key of Keyboard rather than clicking on search button', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		$('td.gsc-input > input').setValue('Random'); //Writing in Search Bar 
+		browser.keys('Enter')//Hitting Enter Key from Keyboard for Searching Random Word on web Application
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -744,12 +734,12 @@ describe('This Example show usage of Keys command in webdriverio', () => {
 ```js
 
 describe('This Example show usage of acceptAlert() command in webdriverio', () => {
-    it('should accept Alert Box', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    $('#alert1').click(); //Click on Alert Button 
-    browser.acceptAlert(); //Accept the Alert/Dialogue Box
-    browser.pause(3000);
-    });
+	it('should accept Alert Box', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		$('#alert1').click(); //Click on Alert Button 
+		browser.acceptAlert(); //Accept the Alert/Dialogue Box
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -759,12 +749,12 @@ describe('This Example show usage of acceptAlert() command in webdriverio', () =
 ```js
 
 describe('This Example show usage of dismissAlert() command in webdriverio', () => {
-    it('should dismiss confirmation Alert Box', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    $('#confirm').click(); //Click on confirmation Alert Button 
-    browser.dismissAlert(); //dimiss the Alert/Dialogue Box
-    browser.pause(3000);
-    });
+	it('should dismiss confirmation Alert Box', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		$('#confirm').click(); //Click on confirmation Alert Button 
+		browser.dismissAlert(); //dimiss the Alert/Dialogue Box
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -774,13 +764,13 @@ describe('This Example show usage of dismissAlert() command in webdriverio', () 
 ```js
 
 describe('This Example show usage of getAlertText() command in webdriverio', () => {
-    it('should display Text of Alert Box', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    $('#alert1').click(); //Click on ClickToGetAlert Button 
-    let AlertText = browser.getAlertText(); //Storing the text present on Alert/Dialogue Box
-    console.log(AlertText);
-    browser.pause(3000);
-    });
+	it('should display Text of Alert Box', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		$('#alert1').click(); //Click on ClickToGetAlert Button 
+		let AlertText = browser.getAlertText(); //Storing the text present on Alert/Dialogue Box
+		console.log(AlertText);
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -790,12 +780,12 @@ describe('This Example show usage of getAlertText() command in webdriverio', () 
 ```js
 
 describe('This Example show usage of sendAlertText() command in webdriverio', () => {
-    it('should send Text to user prompt Box', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    $('#prompt').click(); //Click on Get Prompt Button 
-    browser.sendAlertText("How is your WebDriveIO journey is going on ? ");
-    browser.pause(3000);
-  });
+	it('should send Text to user prompt Box', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		$('#prompt').click(); //Click on Get Prompt Button 
+		browser.sendAlertText("How is your WebDriveIO journey is going on ? ");
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -805,13 +795,13 @@ describe('This Example show usage of sendAlertText() command in webdriverio', ()
 ```js
 
 describe('This Example show usage of doubleCLick() command in webdriverio', () => {
-    it('should click on Double Click Here Button on Omayo.blogspot.com Web Application', ()=> {
-    browser.url('http://omayo.blogspot.com');
-    $("#myBtn").scrollIntoView();
-    const myButton = $("//button[contains(text(),'Double click Here')]");
-    myButton.doubleClick() //Double Click on Double Click Here Button 
-    browser.pause(3000);
-    });
+	it('should click on Double Click Here Button on Omayo.blogspot.com Web Application', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		$("#myBtn").scrollIntoView();
+		const myButton = $("//button[contains(text(),'Double click Here')]");
+		myButton.doubleClick() //Double Click on Double Click Here Button 
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -821,11 +811,11 @@ describe('This Example show usage of doubleCLick() command in webdriverio', () =
 ```js
 
 describe('This Example show usage of MoveTo() command in webdriverio', () => {
-    it(' should demonstrate mouse hover over blog menu list on omayo.blogspot.com web application’ , () => {
-        browser.url('http://omayo.blogspot.com/')
-        $("li.has-sub > a").moveTo(30,60) //hovering over blogs menu list
-        browser.pause(3000);
-    });
+	it(' should demonstrate mouse hover over blog menu list on omayo.blogspot.com web application’ , () => {
+		browser.url('http://omayo.blogspot.com/')
+		$("li.has-sub > a").moveTo(30,60) //hovering over blogs menu list
+		browser.pause(3000);
+	});
 });
 
 ```
@@ -835,11 +825,11 @@ describe('This Example show usage of MoveTo() command in webdriverio', () => {
 ```js
 
 describe('This Example show usage of isExisting() command in webdriverio',() => { 
-  it('should give us true if element is present on the page else returns false',()=> { 
-  browser.url('http://omayo.blogspot.com');  
-  var elementPresent = $('#hbutton').isExisting(); 
-  console.log(elementPresent); 
- });
+	it('should give us true if element is present on the page else returns false',()=> { 
+		browser.url('http://omayo.blogspot.com');  
+		var elementPresent = $('#hbutton').isExisting(); 
+		console.log(elementPresent); 
+	});
 });
 
 ```
@@ -849,11 +839,11 @@ describe('This Example show usage of isExisting() command in webdriverio',() => 
 ```js
 
 describe('This Example show usage of isClickable() command in webdriverio', () => {
-  it('should give us false if isClickable() has been applied on disable element', ()=> {
-  browser.url('http://omayo.blogspot.com');
-  var disabledElement = $('//button[@id="but1"]').isClickable();
-  console.log(disabledElement);
- });
+	it('should give us false if isClickable() has been applied on disable element', ()=> {
+		browser.url('http://omayo.blogspot.com');
+		var disabledElement = $('//button[@id="but1"]').isClickable();
+		console.log(disabledElement);
+	});
 });
 
 ```
@@ -863,35 +853,35 @@ describe('This Example show usage of isClickable() command in webdriverio', () =
 ```js
 
 beforeEach(function(){
-browser.url('http://omayo.blogspot.com');
- });
+	browser.url('http://omayo.blogspot.com');
+});
 
 describe('This Example show usage of isSelected() command in webdriverio', () => {
- it('should give us true if isSelected() has been applied on selected Radio button element',()=> {
- var isSelected = $("input[value='Bicycle']").isSelected(); //RadioButton is in Selected State
- console.log(isSelected);
- });
+	it('should give us true if isSelected() has been applied on selected Radio button element',()=> {
+		var isSelected = $("input[value='Bicycle']").isSelected(); //RadioButton is in Selected State
+		console.log(isSelected);
+	});
 
-it('should give us false if isSelected() has been applied on not selected Radio button element', ()=> {
- var isSelected = $("input[value='Bike']").isSelected();//RadioButton is not in Selected State
- console.log(isSelected);
- });
+	it('should give us false if isSelected() has been applied on not selected Radio button element', ()=> {
+		var isSelected = $("input[value='Bike']").isSelected();//RadioButton is not in Selected State
+		console.log(isSelected);
+	});
 
-it('should give us false if isSelected() has been applied on not selected Radio button element', ()=> {
- var isSelected = $("input[value='Laptop']").isSelected();//CheckBox is not in Selected State
- console.log(isSelected);
- });
+	it('should give us false if isSelected() has been applied on not selected Radio button element', ()=> {
+		var isSelected = $("input[value='Laptop']").isSelected();//CheckBox is not in Selected State
+		console.log(isSelected);
+	});
 
-it('should give us true if isSelected() has been applied on selected Radio button element', ()=> {
- var isSelected = $("input[value='Book']").isSelected();//CheckBox is in Selected State
- console.log(isSelected);
- });
+	it('should give us true if isSelected() has been applied on selected Radio button element', ()=> {
+		var isSelected = $("input[value='Book']").isSelected();//CheckBox is in Selected State
+		console.log(isSelected);
+	});
 });
 
 ```
 
 
-
+# Notes from Shared Drive ---Pending
 
 
 
