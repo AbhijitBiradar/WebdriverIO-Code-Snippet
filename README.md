@@ -1002,7 +1002,16 @@ describe('This Example show usage of isSelected() command in webdriverio', () =>
 ```
 
 
-# Notes from Shared Drive ---Pending
+# Notes from WebdriverIO Official Documentation
+
+For expect object related commands
+https://webdriver.io/docs/api/expect-webdriverio
+
+For browser object related commands
+https://webdriver.io/docs/api/browser/$$
+
+For element object related commands
+https://webdriver.io/docs/api/element/$$
 
 
 
