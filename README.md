@@ -1,5 +1,48 @@
 # WebdriverIO Code Snippet
 
+1. **Browser Related commands**
+
+```js
+	await browser.url("https://www.google.com");
+	
+	await String pageTitle = browser.getTitle();
+	
+	await browser.pause(3000);
+	
+	await browser.switchWindow('http://selenium143.blogspot.com/')	// for tab switch
+	await browser.switchToWindow(ID[i])  // for child window switch
+	
+	await browser.saveScreenshot('./test/Screenshot/pageview.png')
+	
+	await browser.maximizeWindow()	
+	
+	await browser.getWindowSize();	
+	await browser.setWindowSize(400,800);
+	
+	await browser.keys('Enter')
+	
+	await browser.acceptAlert();
+	await browser.dismissAlert();
+	await let AlertText = browser.getAlertText();
+	await browser.sendAlertText("How is your WebDriveIO journey is going on ? ");
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Sample WebdriverIO Login Test
 
 ```js
