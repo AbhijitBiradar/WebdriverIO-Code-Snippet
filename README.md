@@ -29,10 +29,40 @@
 ```
 
 
+1. **Element Related commands**
 
+```js
+	const text = await $('#menu');
+	const text = await $('#menu').scrollIntoView();
+	
+	const menuList = await $$('#menuList');
+	await menuList[1].click();
+	
+	await const iframe = $("#iframe2")
+	await browser.switchToFrame(iframe)
+	
+	await $("#userName").setValue("abhijit1985");
+	
+	const selectBox = await $('#selectbox');
+	await selectBox.selectByVisibleText('cuatro');
+	await selectBox.selectByIndex(4);
+	await selectBox.selectByAttribute('value', 'someValue3');	
+	 
+	
+	await $('#q').click()
+	await $('#q').doubleClick()
+	await $('#q').keys("Text has been Entered in iframe2 text box")
+	
+	const element = $('#draggable')
+	element.dragAndDrop(drop, 5000)
+	
+	const size = $('#HTML29 > div.widget-content > img').getSize();
+	console.log(size.width); 
+	console.log(size.height);	
+	
+	$("li.has-sub > a").moveTo(30,60)
 
-
-
+```
 
 
 
