@@ -29,7 +29,7 @@
 ```
 
 
-1. **Element Related commands**
+2. **Element Related commands**
 
 ```js
 	const text = await $('#menu');
@@ -64,14 +64,60 @@
 
 ```
 
+3. **expect Related commands**
+
+```js
+
+	await expect(browser).toHaveTitleContaining("Abhijit Biradar");
+	await expect(browser).toHaveTextContaining("Abhijit");
+	await expect(browser).toHaveUrlContaining("shop");
+	await expect(browser).toHaveTitle("Google");
+	await expect(element).toBeDisplayed();
+	await expect(element).not.toBeDisplayed();
+
+```
+
+4. **wait Related commands**
+
+```js
+
+	$('#finish').waitForDisplayed();
+	
+	$('#input-example input').waitForEnabled();
+	
+	$('#finish').waitForExist(); 
+	
+	browser.waitUntil(() => {                         
+		return !($('#checkbox').isExisting());       
+	});
+
+```
+
+5. **is Related commands**
+
+```js
+
+	var elementPresent = $('#hbutton').isExisting();
+   	var disabledElement = $('//button[@id="but1"]').isClickable();
+   	var isSelected = $("input[value='Bicycle']").isSelected();
+   	$('#q').isDisplayed()  
+
+```
+
+5. **Locator Related commands**
+	https://dzone.com/articles/how-webdriverio-uses-selenium-locators-in-a-unique
+	
+	
+7. **Mocha Related commands**
 
 
+5. **Chai Related commands**
 
-
-
-
-
-
+```js
+	const menu = await $('#menu');
+	expect(menu.getValue()).to.equal('foo');
+	
+```	
 
 # Sample WebdriverIO Login Test
 
