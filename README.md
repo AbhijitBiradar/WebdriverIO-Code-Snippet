@@ -99,8 +99,9 @@
 
 	var elementPresent = $('#hbutton').isExisting();
    	var disabledElement = $('//button[@id="but1"]').isClickable();
-   	var isSelected = $("input[value='Bicycle']").isSelected();
-   	$('#q').isDisplayed()  
+   	var isSelected = $("input[value='Bicycle']").isSelected(); // for dropdown option
+   	var isDisplayed = $("input[value='Bicycle']").isDisplayed()  
+	var isEnabled = $("input[value='Bicycle']").isEnabled();
 
 ```
 
