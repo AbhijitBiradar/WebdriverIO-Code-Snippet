@@ -1002,6 +1002,62 @@ describe('This Example show usage of isSelected() command in webdriverio', () =>
 
 ```
 
+# Additional Resource for more knowladge
+
+1. **WebDriverIO**
+		
+https://www.youtube.com/playlist?list=PLFGoYjJG_fqqswF8qDdWNG3b-BtZfiqQn
+
+https://www.youtube.com/playlist?list=PL6AdzyjjD5HBbt9amjf3wIVMaobb28ZYN
+
+https://www.youtube.com/playlist?list=PL6flErFppaj3Cjikm_8wHU-I-3V1UhYq-
+
+https://www.youtube.com/playlist?list=PLBNb67lT6eELvpDN20XpJJ89XFn-j-gcA
+
+https://www.youtube.com/playlist?list=PLGk7ftfMz7jbZcArQU894rAfo6B1PbXbG
+
+https://webdriver.io/
+
+https://webdriver.io/docs/api/
+
+https://www.lambdatest.com/blog/how-webdriverio-uses-selenium-locators/
+
+https://webdriver.io/docs/selectors/
+
+https://webdriver.io/versions/
+
+https://webdriver.io/docs/api/expect-webdriverio/
+
+https://webdriver.io/docs/api/element/waitUntil/
+
+https://webdriver.io/docs/selenium-standalone-service/
+
+https://webdriver.io/docs/configurationfile/
+
+https://webdriver.io/docs/allure-reporter/
+
+https://www.udemy.com/join/login-popup/?next=/course/webdriverio-tutorial-nodejs-javascript/learn/lecture/25707132#overview
+
+https://www.youtube.com/watch?v=du2Jnm-TzJc		
+
+
+2. **CucumberJS**
+
+https://www.testim.io/blog/cucumber-js-for-bdd-an-introductory-tutorial-with-examples/
+
+https://www.testim.io/blog/detailed-introduction-javascript-bdd/
+
+https://www.lambdatest.com/blog/cucumberjs-tutorial-selenium/
+
+https://github.com/cucumber/cucumber-js
+
+https://modernweb.com/bdd-in-javascript-with-cucumberjs/
+
+https://www.thinkcode.se/blog/2018/02/07/getting-started-with-cucumber-for-javascript
+
+https://docs.getxray.app/display/XRAY/Testing+Node.js+apps+using+Cucumber.js+in+JavaScript
+
+
 
 # Notes from WebdriverIO Official Documentation
 
