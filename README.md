@@ -1002,6 +1002,171 @@ describe('This Example show usage of isSelected() command in webdriverio', () =>
 
 ```
 
+	
+# Configure Browser in WebdriverIO
+	1. Include "@wdio/selenium-standalone-service" dependency in package.json
+	
+	2. Update browser details in wdio.conf.js file as below
+	   services: ['selenium-standalone']
+	   
+	3. Update browser details as below 
+		browserName: "chrome"		
+		or		
+		browserName: 'firefox'		
+		or
+		browserName: 'MicrosoftEdge
+		
+	Reference: https://webdriver.io/docs/selenium-standalone-service
+	
+
+# Execute script in parallel mode
+	1. Navigate to wdio.conf.js file  
+	
+	2. Update maxInstances value more than 1 as below
+		maxInstances:3
+		
+	3. Add more spec file in specs section as below
+		specs:['./test/specs/**/*.js']
+		
+	4. Update acceptInsecureCerts: true
+
+
+# Execute script in headless mode
+	1. Refer capabilities section in this url https://webdriver.io/docs/configurationfile/
+	
+	
+# Execute specific Test cases in webdriverio
+		1. Add specific word in it block of test as below
+			it('should login with valid credentials-smoke', async () => {});
+			
+		2. Navigate to wdio.conf.js file
+		
+		3. Navigate to command prompt and type command as below
+			npx wdio run wdio.conf.js --mochaOpts.greep smoke
+			
+			
+# Execute specific test suite	
+		1. Navigate to wdio.conf.js file
+		
+		2. Add below section in that file
+			suites:{
+				debitCard:['filepath/file1.js','filepath/file2.js'],
+				creditCard:['filepath/file3.js','filepath/file4.js']
+			}
+
+		3. Navigate to command prompt and execute as below
+			npx wdio run wdio.conf.js --suite debitCard
+			
+			
+
+
+# Execute specific spec file at runtime
+	1. Navigate to command prompt and execute as below
+			npx wdio run wdio.conf.js --spec filepath/file4.js
+
+	2. if you want to execute multiple spec file, use as below
+		npx wdio run wdio.conf.js --spec filepath/file3.js, filepath/file4.js
+		
+
+
+# Exclude test cases in execution		
+	1. Navigate to wdio.conf.js file
+	
+	2. Update exclude section as below
+		exclude: [
+			'filepath/file1.js',
+			'filepath/file2.js'
+		]
+		
+
+
+			
+# Stop execution based on total failed test cases
+	1. Navigate to wdio.conf.js file
+	
+	2. Update value for bail section as below
+		bail: 6
+
+
+# Configure Base URL
+	1. Navigate to wdio.conf.js file
+	
+	2. Update baseurl section as below
+		baseurl:'https://www.google.com'
+		
+	3. Update url in script as below
+		browser.url(`/login.html`)
+		
+	
+# Custom wdio.conf.js file
+
+	1. Create custom config file
+
+		file name : wdio.uat.conf.js
+		const merge= require("deepmerge")
+		const wdioConf= require("./wdio.conf.js")
+
+		exports.config = merge(wdioConf.config, {
+			baseurl:"https:// www.yahoo.com";
+			waitForTimeout: 5000
+
+		});
+
+	2. execute command from command prompt
+		npx wdio run wdio.uat.conf.js
+	
+
+# Retry Failed Test Cases
+
+	describe('retries', function () {
+    // Retry all tests in this suite up to 4 times
+    this.retries(4)  // Retry complete test suite
+
+    beforeEach(async () => {
+        await browser.url('http://www.yahoo.com')
+    })
+
+    it('should succeed on the 3rd try', async function () {
+        // Specify this test to only retry up to 2 times
+        this.retries(2)   // // Retry specific test case
+        console.log('run')
+        await expect($('.foo')).toBeDisplayed()
+    })
+})
+
+
+# Trigger  Execution through Scripts
+
+	1. Navigate to package.json file
+	
+	2. update commdna in script section as below
+		"scripts":{
+			"debitCardTest" : "npx wdio run wdio.conf.js --suite debitCard"
+		}
+		
+	3. execute below command as below 
+		npm run debitCardTest
+
+
+# Configure Reports
+
+https://webdriver.io/docs/allure-reporter/
+https://webdriver.io/docs/junit-reporter/
+
+
+
+
+# Configure jenkins
+
+
+
+
+
+
+
+
+
+
 # Additional Resource for more knowladge
 
 1. **WebDriverIO**
