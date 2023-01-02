@@ -66,28 +66,28 @@
 		deltaX: 0,
 		deltaY: 500,
 		duration: 200
-	    }).perform();
+	}).perform();
 
 	await browser.execute(() => window.scrollY);	
 	
 	await browser.actions([
-        browser.action('pointer')
-            .move(500, 500)
-            .down()
-            .move(250, 250)
-            .up(),
-        browser.action('pointer')
-            .move(500, 500)
-            .down()
-            .move(750, 750)
-            .up()
+		browser.action('pointer')
+		    .move(500, 500)
+		    .down()
+		    .move(250, 250)
+		    .up(),
+		browser.action('pointer')
+		    .move(500, 500)
+		    .down()
+		    .move(750, 750)
+		    .up()
         ]);
 	
 	await browser.setCookies([
 		{name: 'test', value: '123'},
 		{name: 'test2', value: '456'},
 		{name: 'test3', value: '789'}
-	    ]);
+	]);
 
 	let cookies = await browser.getCookies();
 
