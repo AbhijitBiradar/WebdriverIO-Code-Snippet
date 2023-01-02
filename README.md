@@ -9,6 +9,12 @@
 	
 	await browser.pause(3000);
 	
+	await browser.newWindow('https://webdriver.io')
+	await browser.newWindow('https://webdriver.io', {
+       		windowName: 'WebdriverIO window',
+        	windowFeature: 'width=420,height=230,resizable,scrollbars=yes,status=1',
+	});
+	
 	await browser.switchWindow('http://selenium143.blogspot.com/');	// for tab switch
 	await browser.switchToWindow(ID[i]);  // To switch to child window	
 	await browser.switchToWindow(parentWindow); // To switch to Parent window
@@ -77,8 +83,60 @@
             .up()
     ]);
 	
-	// Note : Some methods are pending. Please add from below link.
-	// https://webdriver.io/docs/api/browser
+	await browser.setCookies([
+		{name: 'test', value: '123'},
+		{name: 'test2', value: '456'},
+		{name: 'test3', value: '789'}
+	    ]);
+
+	let cookies = await browser.getCookies();
+
+	await browser.deleteCookies(['test3']);
+
+	await browser.deleteCookies();
+	
+	const result = await browser.execute((a, b, c, d) => { return a + b + c + d }, 1, 2, 3, 4) 
+
+	const result = await browser.executeAsync(function(a, b, c, d, done) {        
+		setTimeout(() => {
+			done(a + b + c + d)
+		}, 3000);
+	}, 1, 2, 3, 4);
+	
+	const windowSize = await browser.getWindowSize();
+	
+	await browser.keys([Key.Ctrl, 'a', 'c])
+	await browser.keys([Key.Ctrl, 'v'])
+	
+	await browser.closeWindow();
+
+	console.log(browser.sessionId);
+	await browser.reloadSession();
+	
+	await browser.savePDF('./some/path/screenshot.pdf');
+
+
+	await browser.startRecordingScreen();
+	await browser.saveRecordingScreen('./some/path/video.mp4');
+
+	await browser.scroll(0, 200)
+
+	await browser.setTimeout({
+		'pageLoad': 10000,
+		'script': 60000
+	});
+	
+
+	const filePath = '/path/to/some/file.png'
+	const remoteFilePath = await browser.uploadFile(filePath)
+
+
+	await browser.waitUntil(
+		async () => (await $('#someText').getText()) === 'I am now different',{
+			timeout: 5000,
+			timeoutMsg: 'expected text to be different after 5s'
+		}
+	);
 
 ```
 
