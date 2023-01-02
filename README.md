@@ -64,6 +64,19 @@
 
 	await browser.execute(() => window.scrollY);	
 	
+	await browser.actions([
+        browser.action('pointer')
+            .move(500, 500)
+            .down()
+            .move(250, 250)
+            .up(),
+        browser.action('pointer')
+            .move(500, 500)
+            .down()
+            .move(750, 750)
+            .up()
+    ]);
+	
 	// Note : Some methods are pending. Please add from below link.
 	// https://webdriver.io/docs/api/browser
 
