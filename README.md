@@ -9,12 +9,16 @@
 	
 	await browser.pause(3000);
 	
-	await browser.switchWindow('http://selenium143.blogspot.com/')	// for tab switch
-	await browser.switchToWindow(ID[i])  // for child window switch
+	await browser.switchWindow('http://selenium143.blogspot.com/');	// for tab switch
+	await browser.switchToWindow(ID[i]);  // To switch to child window	
+	await browser.switchToWindow(parentWindow); // To switch to Parent window
+	var parentWindow = await browser.getWindowHandle(); // To get Parent window
+	var childWindows = await browser.getWindowHandles(); // To get all child windows
 	
-	await browser.saveScreenshot('./test/Screenshot/pageview.png')
+	await browser.saveScreenshot('./test/Screenshot/pageview.png');
 	
-	await browser.maximizeWindow()	
+	await browser.maximizeWindow();
+	await browser.minimizeWindow();
 	
 	await browser.getWindowSize();	
 	await browser.setWindowSize(400,800);
@@ -25,6 +29,9 @@
 	await browser.dismissAlert();
 	await let AlertText = browser.getAlertText();
 	await browser.sendAlertText("How is your WebDriveIO journey is going on ? ");
+	
+	// Note : Some methods are pending. Please add from below link.
+	// https://webdriver.io/docs/api/browser
 
 ```
 
