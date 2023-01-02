@@ -81,7 +81,7 @@
             .down()
             .move(750, 750)
             .up()
-    ]);
+        ]);
 	
 	await browser.setCookies([
 		{name: 'test', value: '123'},
