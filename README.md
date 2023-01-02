@@ -30,6 +30,40 @@
 	await let AlertText = browser.getAlertText();
 	await browser.sendAlertText("How is your WebDriveIO journey is going on ? ");
 	
+	const activeElement = await browser.getActiveElement();
+
+	browser.action('pointer')
+		.move({ duration: 0, origin, x: 0, y: 0 })
+		.down({ button: 0 }) // left button
+		.pause(10)
+		.move({ duration: 0, origin: targetOrigin })
+		.up({ button: 0 })
+		.perform();
+
+	await browser.action('key)
+		.down('f')
+		.down('o')
+		.down('o')
+		.up('f')
+		.up('o')
+		.up('o')
+		.perform();
+
+	await browser.action('key')
+		.down(Key.Ctrl).down('c')
+		.pause(10)
+		.up(Key.Ctrl).up('c')
+		.perform();
+
+
+	await browser.action('wheel').scroll({
+		deltaX: 0,
+		deltaY: 500,
+		duration: 200
+	    }).perform();
+
+	await browser.execute(() => window.scrollY);	
+	
 	// Note : Some methods are pending. Please add from below link.
 	// https://webdriver.io/docs/api/browser
 
