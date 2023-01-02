@@ -173,6 +173,100 @@
 	console.log(size.height);	
 	
 	$("li.has-sub > a").moveTo(30,60)
+	
+	await $('li')[2].getText();
+	await $('li')[2].getTagName();
+	await $('li')[2].getValue()
+
+	await input.addValue('test')
+	await input.addValue(123)
+
+	value = await input.getValue()
+
+	const elem = await $('.input')
+	await elem.setValue('test123')
+
+	await elem.clearValue()
+
+	const myButton = await $('#myButton')
+	await myButton.click()
+
+	const myButton = await $('#myButton')
+	await myButton.doubleClick()
+
+	const elem = await $('#someElem')
+	const target = await $('#someTarget')
+	await elem.dragAndDrop(target)	
+	await elem.dragAndDrop({ x: 100, y: 200 })
+
+	const form = await $('form')
+	const attr = await form.getAttribute('method')
+
+	const elem = await $('#myLabel')
+	const color = await elem.getCSSProperty('color')
+
+	var outerHTML = await $('#test').getHTML();
+
+	const location = await logo.getLocation();
+	const xLocation = await logo.getLocation('x')
+	const yLocation = await logo.getLocation('y')
+
+	var tag = await elem.getProperty('tagName')
+
+	const size = await logo.getSize()
+	const width = await logo.getSize('width')
+	const height = await logo.getSize('height')
+
+	const tagName = await elem.getTagName();
+
+	const value = await inputUser.getValue();
+
+	let clickable = await el.isClickable();
+	let isDisplayed = await elem.isDisplayed();
+	let isDisplayedInViewport = await $('#notDisplayed').isDisplayedInViewport();
+	let isEnabled = await elem.isEnabled();
+
+	const el = await $('#el')
+	const sameEl = await $('#el')
+	el.isEqual(sameEl) // outputs: true
+
+	let elem = await $('#someRandomNonExistingElement')
+	let isExisting = await elem.isExisting()
+
+	await loginInput.isFocused()
+	await element.isSelected()
+
+	await elem.saveScreenshot('./some/path/elemScreenshot.png');
+
+	await elem.scrollIntoView();
+	await elem.scrollIntoView({ block: 'center', inline: 'center' });
+
+
+	await selectBox.selectByAttribute('value', 'someValue3');
+	await selectBox.selectByIndex(4);
+	await selectBox.selectByVisibleText('cuatro');
+
+	await input.setValue('test')
+	await input.setValue(123)
+
+	await elem.waitForClickable({ timeout: 3000 });
+	await elem.waitForClickable({ reverse: true });
+
+	await elem.waitForDisplayed({ timeout: 3000 });
+	await elem.waitForDisplayed({ reverse: true });
+
+	await $('#username').waitForEnabled({ timeout: 3000 });
+	await elem.waitForEnabled({ reverse: true })
+
+	await notification.waitForExist({ timeout: 5000 });
+	await message.waitForExist({ reverse: true });
+
+	await elem.waitUntil(async function () {
+		return (await this.getText()) === 'I am now different'
+	}, {
+		timeout: 5000,
+		timeoutMsg: 'expected text to be different after 5s'
+	});
 
 ```
 
