@@ -28,9 +28,7 @@
 	
 	await browser.setWindowSize(400,800);
 	const windowSize = await browser.getWindowSize();
-	await browser.closeWindow();
-	
-	await browser.keys('Enter')
+	await browser.closeWindow();	
 	
 	await browser.acceptAlert();
 	await browser.dismissAlert();
@@ -105,6 +103,7 @@
 	}, 1, 2, 3, 4);	
 	
 	
+	await browser.keys('Enter')
 	await browser.keys([Key.Ctrl, 'a', 'c])
 	await browser.keys([Key.Ctrl, 'v'])	
 
