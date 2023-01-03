@@ -37,7 +37,7 @@
 	
 	const activeElement = await browser.getActiveElement();
 
-	browser.action('pointer')
+	await browser.action('pointer')
 		.move({ duration: 0, origin, x: 0, y: 0 })
 		.down({ button: 0 }) // left button
 		.pause(10)
@@ -45,7 +45,7 @@
 		.up({ button: 0 })
 		.perform();
 
-	await browser.action('key)
+	await browser.action('key')
 		.down('f')
 		.down('o')
 		.down('o')
@@ -59,7 +59,6 @@
 		.pause(10)
 		.up(Key.Ctrl).up('c')
 		.perform();
-
 
 	await browser.action('wheel').scroll({
 		deltaX: 0,
