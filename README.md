@@ -82,16 +82,14 @@
 		    .up()
         ]);
 	
+	
 	await browser.setCookies([
 		{name: 'test', value: '123'},
 		{name: 'test2', value: '456'},
 		{name: 'test3', value: '789'}
 	]);
-
 	let cookies = await browser.getCookies();
-
 	await browser.deleteCookies(['test3']);
-
 	await browser.deleteCookies();
 	
 	const result = await browser.execute((a, b, c, d) => { return a + b + c + d }, 1, 2, 3, 4) 
