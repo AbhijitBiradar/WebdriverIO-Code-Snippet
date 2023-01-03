@@ -24,10 +24,11 @@
 	await browser.saveScreenshot('./test/Screenshot/pageview.png');
 	
 	await browser.maximizeWindow();
-	await browser.minimizeWindow();
+	await browser.minimizeWindow();	
 	
-	await browser.getWindowSize();	
 	await browser.setWindowSize(400,800);
+	const windowSize = await browser.getWindowSize();
+	await browser.closeWindow();
 	
 	await browser.keys('Enter')
 	
@@ -101,14 +102,11 @@
 		setTimeout(() => {
 			done(a + b + c + d)
 		}, 3000);
-	}, 1, 2, 3, 4);
+	}, 1, 2, 3, 4);	
 	
-	const windowSize = await browser.getWindowSize();
 	
 	await browser.keys([Key.Ctrl, 'a', 'c])
-	await browser.keys([Key.Ctrl, 'v'])
-	
-	await browser.closeWindow();
+	await browser.keys([Key.Ctrl, 'v'])	
 
 	console.log(browser.sessionId);
 	await browser.reloadSession();
