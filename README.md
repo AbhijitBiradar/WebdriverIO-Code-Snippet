@@ -352,14 +352,11 @@
 
 ```
 
-5. **Locator Related commands**
-	https://dzone.com/articles/how-webdriverio-uses-selenium-locators-in-a-unique
 	
-	
-7. **Mocha Related commands**
+6. **Mocha Related commands**
 
 
-5. **Chai Related commands**
+7. **Chai Related commands**
 
 ```js
 	const menu = await $('#menu');
