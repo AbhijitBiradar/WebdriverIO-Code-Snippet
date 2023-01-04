@@ -100,9 +100,9 @@
 	}, 1, 2, 3, 4);	
 	
 	
-	await browser.keys('Enter')
-	await browser.keys([Key.Ctrl, 'a', 'c])
-	await browser.keys([Key.Ctrl, 'v'])	
+	await browser.keys('Enter');
+	await browser.keys([Key.Ctrl, 'a', 'c]);
+	await browser.keys([Key.Ctrl, 'v']);
 
 	console.log(browser.sessionId);
 	await browser.reloadSession();
@@ -113,7 +113,7 @@
 	await browser.startRecordingScreen();
 	await browser.saveRecordingScreen('./some/path/video.mp4');
 
-	await browser.scroll(0, 200)
+	await browser.scroll(0, 200);
 
 	await browser.setTimeout({
 		'pageLoad': 10000,
@@ -122,7 +122,7 @@
 	
 
 	const filePath = '/path/to/some/file.png'
-	const remoteFilePath = await browser.uploadFile(filePath)
+	const remoteFilePath = await browser.uploadFile(filePath);
 
 
 	await browser.waitUntil(
