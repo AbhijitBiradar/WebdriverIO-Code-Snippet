@@ -552,6 +552,9 @@ Commonly used different Locators/Selectors in WebDriverIO are listed as below: â
 8) Chain Selectors
 
 
+Note : For detail study on selectors, please refer below link
+LINK : https://webdriver.io/docs/selectors/
+
 # WebDriverIO â€“ CSS Query Selector
 
 ```js
