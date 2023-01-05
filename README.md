@@ -131,6 +131,13 @@
 			timeoutMsg: 'expected text to be different after 5s'
 		}
 	);
+	
+	
+	browser.switchToFrame("ifr")  // Using ID
+	browser.switchToFrame("demo")  // Using Name
+	browser.switchToFrame($("//iframe[@src='demo.html']"))  // Using Element
+	browser.switchToFrame(1)  // Using Index 
+	browser.switchToParentFrame();  // Switch to Parent Frame
 
 ```
 
@@ -142,17 +149,15 @@
 	const text = await $('#menu').scrollIntoView();
 	
 	const menuList = await $$('#menuList');
-	await menuList[1].click();
-	
-	await const iframe = $("#iframe2")
-	await browser.switchToFrame(iframe)
-	
+	await menuList[1].click();	
+		
 	await $("#userName").setValue("abhijit1985");
 	
 	const selectBox = await $('#selectbox');
 	await selectBox.selectByVisibleText('cuatro');
 	await selectBox.selectByIndex(4);
 	await selectBox.selectByAttribute('value', 'someValue3');	
+	
 	 
 	
 	await $('#q').click()
