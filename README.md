@@ -463,6 +463,92 @@ describe(‘waitCommands’, () => {
 
 ```
 
+# WebdriverIO Timeouts
+
+1. **Session Script Timeout**
+
+```js
+
+await browser.setTimeout({ 'script': 60000 });
+await browser.executeAsync((done) => {
+    console.log('this should not fail')
+    setTimeout(done, 59000)
+});
+
+```
+
+2. **Session Page Load Timeout**
+
+```js
+
+await browser.setTimeout({ 'pageLoad': 10000 });
+
+```
+
+3. **Session Implicit Wait Timeout**
+
+```js
+
+await browser.setTimeout({ 'implicit': 5000 });
+
+```
+
+4. **WebdriverIO related timeouts**
+
+```js
+
+// wdio.conf.js
+export const config = {
+    // ...
+    waitforTimeout: 5000,
+    // ...
+}
+
+const myElem = await $('#myElem');
+await myElem.waitForDisplayed();
+
+// you can also overwrite the default timeout if needed
+await myElem.waitForDisplayed({ timeout: 10000 });
+
+```
+
+5. **Framework related timeouts**
+
+```js
+
+// wdio.conf.js
+export const config = {
+    // ...
+    framework: 'mocha',
+    mochaOpts: {
+        timeout: 20000
+    },
+    // ...
+}
+
+// wdio.conf.js
+export const config = {
+    // ...
+    framework: 'jasmine',
+    jasmineOpts: {
+        defaultTimeoutInterval: 20000
+    },
+    // ...
+}
+
+// wdio.conf.js
+export const config = {
+    // ...
+    framework: 'cucumber',
+    cucumberOpts: {
+        timeout: 20000
+    },
+    // ...
+}
+
+```
+
+
 # WebDriverIO – Handling Checkboxes
 
 ```js
