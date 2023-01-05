@@ -166,9 +166,6 @@
 	
 	await elem.clearValue()
 	
-	await $('#q').click()
-	await $('#q').doubleClick()	
-	
 	const element = $('#draggable')
 	element.dragAndDrop(drop, 5000)
 	
@@ -182,13 +179,17 @@
 	await $('li')[2].getTagName();
 	await $('li')[2].getValue()
 
-	value = await input.getValue()	
+		
+
+
 
 	const myButton = await $('#myButton')
 	await myButton.click()
 
 	const myButton = await $('#myButton')
 	await myButton.doubleClick()
+	
+	await myButton.click({ button: 'right' })
 
 	const elem = await $('#someElem')
 	const target = await $('#someTarget')
@@ -216,6 +217,10 @@
 	const tagName = await elem.getTagName();
 
 	const value = await inputUser.getValue();
+
+
+
+
 
 	let clickable = await el.isClickable();
 	let isDisplayed = await elem.isDisplayed();
