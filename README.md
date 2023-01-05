@@ -151,18 +151,23 @@
 	const menuList = await $$('#menuList');
 	await menuList[1].click();	
 		
-	await $("#userName").setValue("abhijit1985");
-	
 	const selectBox = await $('#selectbox');
 	await selectBox.selectByVisibleText('cuatro');
 	await selectBox.selectByIndex(4);
 	await selectBox.selectByAttribute('value', 'someValue3');	
 	
-	 
+	await input.addValue('test')
+	await input.addValue(123)
+
+	await input.setValue('test')
+	await input.setValue(123)	
+
+	await $('#q').keys("Text has been Entered in iframe2 text box")
+	
+	await elem.clearValue()
 	
 	await $('#q').click()
-	await $('#q').doubleClick()
-	await $('#q').keys("Text has been Entered in iframe2 text box")
+	await $('#q').doubleClick()	
 	
 	const element = $('#draggable')
 	element.dragAndDrop(drop, 5000)
@@ -177,15 +182,7 @@
 	await $('li')[2].getTagName();
 	await $('li')[2].getValue()
 
-	await input.addValue('test')
-	await input.addValue(123)
-
-	value = await input.getValue()
-
-	const elem = await $('.input')
-	await elem.setValue('test123')
-
-	await elem.clearValue()
+	value = await input.getValue()	
 
 	const myButton = await $('#myButton')
 	await myButton.click()
@@ -239,14 +236,6 @@
 
 	await elem.scrollIntoView();
 	await elem.scrollIntoView({ block: 'center', inline: 'center' });
-
-
-	await selectBox.selectByAttribute('value', 'someValue3');
-	await selectBox.selectByIndex(4);
-	await selectBox.selectByVisibleText('cuatro');
-
-	await input.setValue('test')
-	await input.setValue(123)
 
 	await elem.waitForClickable({ timeout: 3000 });
 	await elem.waitForClickable({ reverse: true });
