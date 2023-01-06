@@ -279,6 +279,7 @@
 		await expect(elem).toBePresent()
 		await expect(elem).toBeExisting()
 		await expect(elem).toBeFocused()
+		
 		await expect(myInput).toHaveAttribute('class', 'form-control')
 		await expect(myInput).toHaveAttr('class', 'form-control')
 		await expect(myInput).toHaveAttributeContaining('class', 'form')
@@ -298,6 +299,7 @@
 		await expect(elem).not.toBeDisabled()
 		await expect(elem).toBeSelected()
 		await expect(elem).toBeChecked()
+		
 		await expect(link).toHaveHref('https://webdriver.io')
 		await expect(link).toHaveLink('https://webdriver.io')
 		await expect(link).toHaveHrefContaining('webdriver.io')
@@ -308,7 +310,8 @@
 		await expect(elem).toHaveTextContaining('browser and mobile automation test framework')
 		await expect(elem).toHaveTextContaining(['browser and mobile automation test framework', 'Started'])
 		await expect(elem).toBeDisplayedInViewport()
-		await expect(list).toHaveChildren() // the list has at least one item		
+		await expect(list).toHaveChildren() // the list has at least one item	
+		
 		await expect(list).toHaveChildren({ gte: 1 })
 		await expect(list).toHaveChildren(3) // the list has 3 items		
 		await expect(list).toHaveChildren({ eq: 3 })
