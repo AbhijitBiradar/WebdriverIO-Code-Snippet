@@ -268,61 +268,67 @@
 ```js
 
 	Browser Matchers
-		await expect(browser).toHaveUrl('https://webdriver.io')
-		await expect(browser).toHaveUrlContaining('webdriver')
-		await expect(browser).toHaveTitle('WebdriverIO · Next-gen browser and mobile automation test framework for Node.js')
-		await expect(browser).toHaveTitleContaining('WebdriverIO')
+		await expect(browser).toHaveUrl('https://webdriver.io');
+		await expect(browser).toHaveUrlContaining('webdriver');
+		await expect(browser).toHaveTitle('WebdriverIO · Next-gen browser and mobile automation test framework for Node.js');
+		await expect(browser).toHaveTitleContaining('WebdriverIO');
 
 	Element Matchers
-		await expect(elem).toBeDisplayed()
-		await expect(elem).toExist()
-		await expect(elem).toBePresent()
-		await expect(elem).toBeExisting()
-		await expect(elem).toBeFocused()
+		await expect(element).toBeDisplayed();
+		await expect(element).toExist();
+		await expect(element).toBePresent();
+		await expect(element).toBeExisting();
+		await expect(element).toBeFocused();
 		
-		await expect(myInput).toHaveAttribute('class', 'form-control')
-		await expect(myInput).toHaveAttr('class', 'form-control')
-		await expect(myInput).toHaveAttributeContaining('class', 'form')
-		await expect(myInput).toHaveAttrContaining('class', 'form')
-		await expect(myInput).toHaveElementClass('form-control', { message: 'Not a form control!', })
-		await expect(myInput).toHaveElementClassContaining('form')
+		await expect(myInput).toHaveAttribute('class', 'form-control');
+		await expect(myInput).toHaveAttr('class', 'form-control');
+		await expect(myInput).toHaveAttributeContaining('class', 'form');
+		await expect(myInput).toHaveAttrContaining('class', 'form');
+		await expect(myInput).toHaveElementClass('form-control', { message: 'Not a form control!', });
+		await expect(myInput).toHaveElementClassContaining('form');
 
-		await expect(elem).toHaveElementProperty('height', 23)
-		await expect(elem).not.toHaveElementProperty('height', 0)
+		await expect(element).toHaveElementProperty('height', 23);
+		await expect(element).not.toHaveElementProperty('height', 0)
 
-		await expect(myInput).toHaveValue('user', { ignoreCase: true })
-		await expect(myInput).toHaveValueContaining('us')
-		await expect(elem).toBeClickable()
-		await expect(elem).toBeDisabled()		
-		await expect(elem).not.toBeEnabled()
-		await expect(elem).toBeEnabled()		
-		await expect(elem).not.toBeDisabled()
-		await expect(elem).toBeSelected()
-		await expect(elem).toBeChecked()
+		await expect(myInput).toHaveValue('user', { ignoreCase: true });
+		await expect(myInput).toHaveValueContaining('us');
 		
-		await expect(link).toHaveHref('https://webdriver.io')
-		await expect(link).toHaveLink('https://webdriver.io')
-		await expect(link).toHaveHrefContaining('webdriver.io')
-		await expect(link).toHaveLinkContaining('webdriver.io')
-		await expect(elem).toHaveId('elem')
-		await expect(elem).toHaveText('Next-gen browser and mobile automation test framework for Node.js')
-		await expect(elem).toHaveText(['Next-gen browser and mobile automation test framework for Node.js', 'Get Started'])
-		await expect(elem).toHaveTextContaining('browser and mobile automation test framework')
-		await expect(elem).toHaveTextContaining(['browser and mobile automation test framework', 'Started'])
-		await expect(elem).toBeDisplayedInViewport()
-		await expect(list).toHaveChildren() // the list has at least one item	
+		await expect(element).toBeClickable();
+		await expect(element).toBeDisabled();		
+		await expect(element).not.toBeEnabled();
+		await expect(element).toBeEnabled();		
+		await expect(element).not.toBeDisabled();
+		await expect(element).toBeSelected();
+		await expect(element).toBeChecked();
 		
-		await expect(list).toHaveChildren({ gte: 1 })
-		await expect(list).toHaveChildren(3) // the list has 3 items		
-		await expect(list).toHaveChildren({ eq: 3 })
-		await expect(listItems).toBeElementsArrayOfSize(5) // 5 items in the list
-		await expect(listItems).toBeElementsArrayOfSize({ lte: 10 })
-		await expect(elem).toHaveText(/node\.js/i)
-		await expect(elem).toHaveText([/node\.js/i, 'Get Started'])
-		await expect(elem).toHaveTextContaining([/node\.js/i, 'Started'])
-		await expect(browser).toHaveTitle(/webdriverio/i)
-		await expect(browser).toHaveUrl(/webdriver\.io/)
-		await expect(elem).toHaveElementClass(/Container/i)
+		await expect(link).toHaveHref('https://webdriver.io');
+		await expect(link).toHaveLink('https://webdriver.io');
+		await expect(link).toHaveHrefContaining('webdriver.io');
+		await expect(link).toHaveLinkContaining('webdriver.io');
+		
+		await expect(element).toHaveId('elem');
+		await expect(element).toHaveText('Next-gen browser and mobile automation test framework for Node.js');
+		await expect(element).toHaveText(['Next-gen browser and mobile automation test framework for Node.js', 'Get Started']);
+		await expect(element).toHaveTextContaining('browser and mobile automation test framework');
+		await expect(element).toHaveTextContaining(['browser and mobile automation test framework', 'Started']);
+		await expect(element).toBeDisplayedInViewport();
+		await expect(list).toHaveChildren(); // the list has at least one item	
+		
+		await expect(list).toHaveChildren({ gte: 1 });
+		await expect(list).toHaveChildren(3); // the list has 3 items		
+		await expect(list).toHaveChildren({ eq: 3 });
+		
+		await expect(listItems).toBeElementsArrayOfSize(5); // 5 items in the list
+		await expect(listItems).toBeElementsArrayOfSize({ lte: 10 });
+		
+		await expect(elem).toHaveText(/node\.js/i);
+		await expect(elem).toHaveText([/node\.js/i, 'Get Started']);		
+		await expect(elem).toHaveTextContaining([/node\.js/i, 'Started']);
+		
+		await expect(browser).toHaveTitle(/webdriverio/i);
+		await expect(browser).toHaveUrl(/webdriver\.io/);
+		
+		await expect(elem).toHaveElementClass(/Container/i);
 		
 ```
 
