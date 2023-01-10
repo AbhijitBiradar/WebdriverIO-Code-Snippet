@@ -1508,9 +1508,9 @@ https://webdriver.io/docs/junit-reporter/
 
 1. **addValue() vs setValue() in WebdriverIO**
 
-addValue(): Add a value to an input or textarea element found by given selector.
+	addValue(): Add a value to an input or textarea element found by given selector.
 
-setValue(): Send a sequence of key strokes to an element after the input has been cleared before. If the element doesn't need to be cleared first then use addValue.
+	setValue(): Send a sequence of key strokes to an element after the input has been cleared before. If the element doesn't need to be cleared first 		      then use addValue.
 
 
 
