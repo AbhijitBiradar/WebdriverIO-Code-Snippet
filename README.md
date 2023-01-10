@@ -179,9 +179,6 @@
 	await $('li')[2].getTagName();
 	await $('li')[2].getValue()
 
-		
-
-
 
 	const myButton = await $('#myButton')
 	await myButton.click()
@@ -217,9 +214,6 @@
 	const tagName = await elem.getTagName();
 
 	const value = await inputUser.getValue();
-
-
-
 
 
 	let clickable = await el.isClickable();
@@ -336,13 +330,17 @@
 
 ```js
 
-	$('#finish').waitForDisplayed();
+	await $('#finish').waitForDisplayed();
+	await $('#finish').waitForDisplayed({ timeout: 3000 });
 	
-	$('#input-example input').waitForEnabled();
+	await $('#input-example input').waitForEnabled();
+	await $('#input-example input').waitForEnabled({ timeout: 3000 });
 	
-	$('#finish').waitForExist(); 
+	await $('#finish').waitForExist(); 
+	await $('#finish').waitForExist({ timeout: 3000 });
 	
-	browser.waitUntil(() => {                         
+	browser.waitUntil(() => {         
+		timeout: 5000,		
 		return !($('#checkbox').isExisting());       
 	});
 
@@ -413,6 +411,7 @@ describe('waitForCommands', () => {
 		 browser.url('https://the-internet.herokuapp.com/dynamic_loading/1');
 		 $('#start button').click();
 		 $('#finish').waitForDisplayed();  //will wait for text present under ID finish to display.
+		 $('#finish').waitForDisplayed({ timeout: 3000 });
 		 assert.equal( ($('#finish h4').getText()),'Hello World! ');
 	});
 });
@@ -430,6 +429,7 @@ describe('waitForCommands', () => {
 		 browser.url('https://the-internet.herokuapp.com/dynamic_controls');
 		 $('#input-example button').click();
 		 $('#input-example input').waitForEnabled();
+		 $('#input-example input').waitForEnabled({ timeout: 3000 });
 		 $('#input-example input').addValue('test');
 		 browser.pause(5000);
 	});
@@ -447,7 +447,8 @@ describe('waitForCommands', () => {
 	it('waitForExist', ()=> {
 		browser.url('https://the-internet.herokuapp.com/dynamic_loading/1');
 		$('#start button').click();
-		$('#finish').waitForExist();  //will wait for text present under ID finish to display.                                
+		$('#finish').waitForExist();  //will wait for text present under ID finish to display.     
+		$('#finish').waitForExist({ timeout: 3000 });
 	});
 });
 
@@ -464,7 +465,8 @@ describe(‘waitCommands’, () => {
 		browser.url('https://the-internet.herokuapp.com/dynamic_controls');
 		$('#checkbox-example button').click();                      
 		
-		browser.waitUntil(() => {                         
+		browser.waitUntil(() => {     
+			timeout: 5000,		
 			return !($('#checkbox').isExisting());       
 		});      
 	}); 
@@ -1502,9 +1504,13 @@ https://webdriver.io/docs/junit-reporter/
 
 
 
+# Differences
 
+1. **addValue() vs setValue() in WebdriverIO**
 
+addValue(): Add a value to an input or textarea element found by given selector.
 
+setValue(): Send a sequence of key strokes to an element after the input has been cleared before. If the element doesn't need to be cleared first then use addValue.
 
 
 
